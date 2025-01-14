@@ -1,10 +1,15 @@
-module Suit where 
+module Suit where
 
-data Suit = Spades
+data Suit
+  = Spades
   | Hearts
   | Clubs
   | Diamonds
-  deriving Eq
+  deriving (Eq)
 
 toSymbol :: Suit -> [Char]
-toSymbol a = if a == Spades then "♠️" else if a == Hearts then "♥️" else if a == Clubs then "♣️" else "♦️"
+toSymbol a
+  | a == Spades = "♠️"
+  | a == Hearts = "♥️"
+  | a == Clubs = "♣️"
+  | a == Diamonds = "♦️"
